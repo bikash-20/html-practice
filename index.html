@@ -701,4 +701,9 @@ window.addEventListener('scroll',()=>{let c='';sections.forEach(s=>{if(window.sc
 
 /* ── POPUP ── */
 function openPopup(btn){const card=btn.closest('.pjc');const img=card.querySelector('.pj-thumb img');document.getElementById('pop-img').src=img.src;document.getElementById('pop-title').textContent=card.dataset.popTitle;document.getElementById('pop-desc').textContent=card.dataset.popDesc;document.getElementById('popup').classList.add('open');document.body.style.overflow='hidden';}
-function closePopup(){document.getElementById('popup').classList.remove('open');document.body.style.overflow='';
+function closePopup(){document.getElementById('popup').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('popup').addEventListener('click',e=>{if(e.target===document.getElementById('popup'))closePopup();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeCVModal();}});
+</script>
+</body>
+</html>
